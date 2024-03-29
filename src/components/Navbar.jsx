@@ -1,4 +1,5 @@
 // import { Link } from "react-router-dom";
+import { FaRegCircleUser } from "react-icons/fa6";
 
 import {
   Navbar,
@@ -43,17 +44,21 @@ export default function App() {
           <p className="font-bold text-inherit">FreeBud</p>
         </NavbarBrand>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link
+            className="hover:underline underline-offset-8"
+            color="foreground"
+            href="#"
+          >
             Careers
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page" color="warning">
-            Internship
-          </Link>
-        </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link
+            className="hover:underline underline-offset-8"
+            href="/all_jobs"
+            aria-current="page"
+            color="warning"
+          >
             Jobs
           </Link>
         </NavbarItem>
@@ -61,6 +66,12 @@ export default function App() {
 
       <NavbarContent justify="end">
         {/* Login & Sign Up Buttons */}
+        <Link to="user_dashboard">
+          {" "}
+          <NavbarItem>
+            <FaRegCircleUser className="text-4xl text-teal-400 hover:bg-yellow-100 cursor-pointer rounded-full p-1 mx-8" />
+          </NavbarItem>
+        </Link>
         <NavbarItem className="hidden lg:flex">
           <Link href="/login">Login</Link>
         </NavbarItem>
